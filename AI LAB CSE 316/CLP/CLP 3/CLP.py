@@ -1,7 +1,7 @@
 import random
 
-t = 0  # target sum
-g = 0  # gene length
+t = 0  
+g = 0  
 
 def calculate_fitness(individual):
     global t
@@ -44,8 +44,8 @@ def main():
     global t, g
 
     # Input
-    t = int(input("Insert the target: "))
-    g = int(input("Insert value of K: "))
+    t = int(input())
+    g = int(input())
 
     population_size = 10
     population = generate_random_population(population_size, g)
