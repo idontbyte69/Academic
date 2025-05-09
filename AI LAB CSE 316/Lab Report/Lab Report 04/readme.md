@@ -1,15 +1,6 @@
-# K-Means Clustering Implementation
+# K-Means Clustering Output
 
-# Here are the results of my Lab Task:
-
-![](./output/clustering_result.png)  
-*Figure 1: K-Means Clustering Results*
-
-![](./output/1.png)  
-*Figure 2: Program Output*
-
-![](./output/2.png)  
-*Figure 3: 2D Visualization*
-
-![](./output/3.png)  
-*Figure 4: Generated Points* 
+![Clustering Result](./output/clustering_result.png)
+![Program Output](./output/1.png)
+![2D Visualization](./output/2.png)
+![Generated Points](./output/3.png) 
