@@ -30,7 +30,6 @@ class KMeansClusterer:
         self.generate_data()
         
     def generate_data(self):
-        # Generate points in a more structured way using Gaussian distributions
         centers = [(random.uniform(0, 100), random.uniform(0, 100)) for _ in range(4)]
         points_per_center = self.n_points // 4
         
@@ -38,17 +37,14 @@ class KMeansClusterer:
             for _ in range(points_per_center):
                 x = random.gauss(center[0], 15)
                 y = random.gauss(center[1], 15)
-                # Ensure points stay within bounds
                 x = max(0, min(100, x))
                 y = max(0, min(100, y))
                 self.points.append(ClusterPoint(x, y))
         
-        # Initialize clusters with random centroids
         for i in range(self.n_clusters):
             centroid = np.array([random.uniform(0, 100), random.uniform(0, 100)])
             self.clusters.append(Cluster(centroid, i))
             
-        # Save data to file
         with open('data.txt', 'w') as f:
             f.write("Points:\n")
             for p in self.points:
@@ -90,17 +86,14 @@ class KMeansClusterer:
                 continue
                 
             for point in cluster_points:
-                # Calculate a (average distance to points in same cluster)
                 a = np.mean([self.euclidean_distance(point.coordinates, p.coordinates) 
                            for p in cluster_points if p != point])
                 
-                # Calculate b (average distance to points in nearest cluster)
                 other_clusters = [c for c in self.clusters if c.id != cluster.id]
                 b = min([np.mean([self.euclidean_distance(point.coordinates, p.coordinates) 
                                 for p in self.points if p.cluster_id == c.id])
                         for c in other_clusters])
                 
-                # Calculate silhouette score for this point
                 point_silhouette = (b - a) / max(a, b)
                 cluster.silhouette_score += point_silhouette
             
@@ -121,7 +114,6 @@ class KMeansClusterer:
     def visualize_results(self):
         plt.figure(figsize=(12, 8))
         
-        # Plot points
         colors = plt.cm.rainbow(np.linspace(0, 1, self.n_clusters))
         for i, cluster in enumerate(self.clusters):
             cluster_points = [p for p in self.points if p.cluster_id == cluster.id]
@@ -130,7 +122,6 @@ class KMeansClusterer:
                 y = [p.coordinates[1] for p in cluster_points]
                 plt.scatter(x, y, c=[colors[i]], label=f'Cluster {i+1}', alpha=0.6)
         
-        # Plot centroids
         for i, cluster in enumerate(self.clusters):
             plt.scatter(cluster.centroid[0], cluster.centroid[1], 
                        c=[colors[i]], marker='*', s=200, edgecolor='black')
@@ -141,16 +132,10 @@ class KMeansClusterer:
         plt.legend()
         plt.grid(True)
         
-        # Save the plot
         plt.savefig('output/clustering_result.png')
-        
-        # Show the plot
         plt.show()
-        
-        # Close the plot
         plt.close()
 
-        # Print results
         print(f"\nClustering completed in {self.iteration_count} iterations")
         print("\nCluster Statistics:")
         for i, cluster in enumerate(self.clusters):
