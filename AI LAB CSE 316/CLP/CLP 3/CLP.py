@@ -43,7 +43,7 @@ def generate_random_population(size, gene_length):
 def main():
     global t, g
 
-    # Input
+    
     t = int(input())
     g = int(input())
 
@@ -55,8 +55,7 @@ def main():
     fittest_individual = max(population, key=calculate_fitness)
 
     print(f"Generation: {generation} Fittest sum: {fittest_individual[0] + fittest_individual[1]}")
-
-    # Loop until we get exact match
+    
     while fittest_individual[0] + fittest_individual[1] != t:
         generation += 1
 
@@ -73,7 +72,7 @@ def main():
         fittest_individual = max(population, key=calculate_fitness)
         print(f"Generation: {generation} Fittest sum: {fittest_individual[0] + fittest_individual[1]}")
 
-    # Output the result
+    
     print(f"\nSolution found in generation {generation}")
     print(f"Sum of first two genes: {fittest_individual[0] + fittest_individual[1]}")
     print("Genes: ", *fittest_individual)
