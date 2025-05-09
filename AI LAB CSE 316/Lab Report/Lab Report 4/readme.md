@@ -47,6 +47,7 @@ The console output shows:
 # Here are the results of my Lab Task:
 
 ![image](https://github.com/user-attachments/assets/a42b6eb8-d527-48a4-9172-2c585d14caa7)
+
 *Figure 1: K-Means Clustering Results*
 
 The visualization shows how the algorithm successfully groups similar points into clusters, with each cluster represented by a different color. The centroids (marked with stars) represent the center of each cluster.
