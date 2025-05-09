@@ -46,18 +46,15 @@ The console output shows:
 
 # Here are the results of my Lab Task:
 
-![](./output/clustering_result.png)  
+![image](https://github.com/user-attachments/assets/a42b6eb8-d527-48a4-9172-2c585d14caa7)
 *Figure 1: K-Means Clustering Results*
 
 The visualization shows how the algorithm successfully groups similar points into clusters, with each cluster represented by a different color. The centroids (marked with stars) represent the center of each cluster.
 
-![](./output/1.png)  
-*Figure 2: Program Output.*
+![image](https://github.com/user-attachments/assets/8cb70224-84cb-4bfa-92e3-a50a072b955d)
+*Figure 2: 2D Visualization.*
 
-![](./output/2.png)  
-*Figure 3: 2D Visualization.*
-
-![](./output/3.png)  
-*Figure 4: Generated Points.*
+![image](https://github.com/user-attachments/assets/62407c83-5099-4cfa-8f13-b05c4402a02c)
+*Figure 3: Generated Points.*
 
 
